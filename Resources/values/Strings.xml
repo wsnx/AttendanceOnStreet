@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">Attendance On The Street</string>
+    <string name="openCamera">Open Camera</string>
+    <string name="jenis_absen">Pilih Jenis Absen</string>
+    <string-array name="jenis_absen">
+      <item>1. Masuk Kerja</item>
+      <item>2. Pulang Kerja</item>
+      <item>3. Meeting dengan Customer</item>
+      <item>4. Meeting Koordinasi</item>
+      <item>5. Tugas Luar Kantor</item>
+      <item>6. Sakit</item>
+      <item>7. Ijin Telat Masuk</item>
+      <item>8. Sudden Leave</item>
+    </string-array>
+  <string name="bulanke">Pilih Bulan</string>
+  <string-array name="bulanke">
+    <item>Bulan Sekarang</item>
+    <item>Bulan Kemarin</item>
+    <item>Bulan Kemarin Lusa</item>
+  </string-array>
+</resources>

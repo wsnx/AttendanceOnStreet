@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Retrive_Image_Name">
+        <s:complexType />
+      </s:element>
+      <s:element name="Retrive_Image_NameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Retrive_Image_NameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Retrive_Image">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jenisabsen" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="inputdate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Retrive_ImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Retrive_ImageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateImagedata">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jenisabsen" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateImagedataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="G_NamaKaryawan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_NamaKaryawanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="G_NamaKaryawanResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmployeeID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckEmployeeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckEmployeeIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_JamPhoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="jenisabs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_JamPhotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="G_JamPhotoResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_EmployeeID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_EmployeeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="G_EmployeeIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_ListAbsensi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bulan" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="tahun" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="G_ListAbsensiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="G_ListAbsensiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="Retrive_Image_NameSoapIn">
+    <wsdl:part name="parameters" element="tns:Retrive_Image_Name" />
+  </wsdl:message>
+  <wsdl:message name="Retrive_Image_NameSoapOut">
+    <wsdl:part name="parameters" element="tns:Retrive_Image_NameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Retrive_ImageSoapIn">
+    <wsdl:part name="parameters" element="tns:Retrive_Image" />
+  </wsdl:message>
+  <wsdl:message name="Retrive_ImageSoapOut">
+    <wsdl:part name="parameters" element="tns:Retrive_ImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateImagedataSoapIn">
+    <wsdl:part name="parameters" element="tns:updateImagedata" />
+  </wsdl:message>
+  <wsdl:message name="updateImagedataSoapOut">
+    <wsdl:part name="parameters" element="tns:updateImagedataResponse" />
+  </wsdl:message>
+  <wsdl:message name="G_NamaKaryawanSoapIn">
+    <wsdl:part name="parameters" element="tns:G_NamaKaryawan" />
+  </wsdl:message>
+  <wsdl:message name="G_NamaKaryawanSoapOut">
+    <wsdl:part name="parameters" element="tns:G_NamaKaryawanResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmployeeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckEmployeeID" />
+  </wsdl:message>
+  <wsdl:message name="CheckEmployeeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckEmployeeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="G_JamPhotoSoapIn">
+    <wsdl:part name="parameters" element="tns:G_JamPhoto" />
+  </wsdl:message>
+  <wsdl:message name="G_JamPhotoSoapOut">
+    <wsdl:part name="parameters" element="tns:G_JamPhotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="G_EmployeeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:G_EmployeeID" />
+  </wsdl:message>
+  <wsdl:message name="G_EmployeeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:G_EmployeeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="G_ListAbsensiSoapIn">
+    <wsdl:part name="parameters" element="tns:G_ListAbsensi" />
+  </wsdl:message>
+  <wsdl:message name="G_ListAbsensiSoapOut">
+    <wsdl:part name="parameters" element="tns:G_ListAbsensiResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retrive_Image_Name">
+      <wsdl:input message="tns:Retrive_Image_NameSoapIn" />
+      <wsdl:output message="tns:Retrive_Image_NameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Retrive_Image">
+      <wsdl:input message="tns:Retrive_ImageSoapIn" />
+      <wsdl:output message="tns:Retrive_ImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateImagedata">
+      <wsdl:input message="tns:updateImagedataSoapIn" />
+      <wsdl:output message="tns:updateImagedataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="G_NamaKaryawan">
+      <wsdl:input message="tns:G_NamaKaryawanSoapIn" />
+      <wsdl:output message="tns:G_NamaKaryawanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployeeID">
+      <wsdl:input message="tns:CheckEmployeeIDSoapIn" />
+      <wsdl:output message="tns:CheckEmployeeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="G_JamPhoto">
+      <wsdl:input message="tns:G_JamPhotoSoapIn" />
+      <wsdl:output message="tns:G_JamPhotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="G_EmployeeID">
+      <wsdl:input message="tns:G_EmployeeIDSoapIn" />
+      <wsdl:output message="tns:G_EmployeeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="G_ListAbsensi">
+      <wsdl:input message="tns:G_ListAbsensiSoapIn" />
+      <wsdl:output message="tns:G_ListAbsensiSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retrive_Image_Name">
+      <soap:operation soapAction="http://tempuri.org/Retrive_Image_Name" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retrive_Image">
+      <soap:operation soapAction="http://tempuri.org/Retrive_Image" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateImagedata">
+      <soap:operation soapAction="http://tempuri.org/updateImagedata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_NamaKaryawan">
+      <soap:operation soapAction="http://tempuri.org/G_NamaKaryawan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployeeID">
+      <soap:operation soapAction="http://tempuri.org/CheckEmployeeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_JamPhoto">
+      <soap:operation soapAction="http://tempuri.org/G_JamPhoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_EmployeeID">
+      <soap:operation soapAction="http://tempuri.org/G_EmployeeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_ListAbsensi">
+      <soap:operation soapAction="http://tempuri.org/G_ListAbsensi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retrive_Image_Name">
+      <soap12:operation soapAction="http://tempuri.org/Retrive_Image_Name" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retrive_Image">
+      <soap12:operation soapAction="http://tempuri.org/Retrive_Image" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateImagedata">
+      <soap12:operation soapAction="http://tempuri.org/updateImagedata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_NamaKaryawan">
+      <soap12:operation soapAction="http://tempuri.org/G_NamaKaryawan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckEmployeeID">
+      <soap12:operation soapAction="http://tempuri.org/CheckEmployeeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_JamPhoto">
+      <soap12:operation soapAction="http://tempuri.org/G_JamPhoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_EmployeeID">
+      <soap12:operation soapAction="http://tempuri.org/G_EmployeeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="G_ListAbsensi">
+      <soap12:operation soapAction="http://tempuri.org/G_ListAbsensi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://www.rahmat-faisal.com/service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://www.rahmat-faisal.com/service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
